@@ -222,5 +222,9 @@ recov_ppm <- ifelse(is.na(df$recovtime), candidate, df$recovtime)
 df_ppm <- df
 df_ppm$recovtime <- recov_ppm
 
+mean_ppm <- mean(df_ppm$recovtime)
+se_ppm <- sd(df_ppm$recovtime)/sqrt(length(df_ppm$recovtime))
+cor_ppm_1 <- cor(df_ppm$recovtime, df_ppm$logdose)
+cor_ppm_2 <- cor(df_ppm$recovtime, df_ppm$bloodp)
 
 
